@@ -1,0 +1,81 @@
+/* css 초기화 */
+@import "reset.css";
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+html {
+  
+}
+
+* {
+  font-family: 'IBM Plex Mono', monospace;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 75vh;
+  background: linear-gradient(107deg, rgba(0, 0, 0, 0.2) 0%, rgba(174, 174, 174, 0.08125) 51.73%, rgba(192, 192, 192, 0) 100%), rgba(29, 29, 29, 0.94);
+}
+
+.intro-header {
+  /* display: none; */
+  position: fixed;
+  width: 100%;
+  background-color: #161616;
+  top: 0;
+  padding-right: 10%;
+  height: 100px;
+  border-bottom: #DB6D4B solid 2px;
+}
+
+
+.intro-login {
+  float: right;
+  font-size: 30px;
+  font-weight: 900px;
+  line-height: 100px;
+  text-decoration: none;
+  color: #F0F4F5;
+  vertical-align: middle;
+}
+
+
+.intro-box {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 30px;
+  color: #F0F4F5;
+}
+
+.intro-box .info {
+  margin-top: 360px;
+  margin-bottom: 200px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.intro-box img {
+  width: 700px;
+  margin-bottom: 50px;
+}
+
+#dynamic {
+  position: relative;
+  display: inline-block;
+}
+
+#dynamic::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  width: 4px;
+  height: 100%;
+  background-color: white;
+}
+
+#dynamic.active::after {
+  display: none;
+}
