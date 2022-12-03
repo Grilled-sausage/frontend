@@ -1,0 +1,7 @@
+.App{
+    display: block;
+    user-select: none;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(107.56deg, rgba(0, 0, 0, 0.2) 0%, rgba(174, 174, 174, 0.08125) 51.73%, rgba(192, 192, 192, 0) 100%), rgba(29, 29, 29, 0.94);
+}
