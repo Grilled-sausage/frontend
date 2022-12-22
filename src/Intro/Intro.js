@@ -6,7 +6,7 @@ import "./Intro.css"
 
 function Intro(){
     return (
-        <div>
+        <div className="container">
             <div className="header">
                 <ul>
                     <li className="login-li">
