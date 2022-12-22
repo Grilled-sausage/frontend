@@ -1,0 +1,12 @@
+/* css 초기화 */
+@import 'reset.css';
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+* {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body{
+    background: #1d1d1d;
+}
