@@ -1,50 +1,13 @@
-.survey-movie, .survey-person {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.movie-container, .person-container {
-    width: 200px;
-    margin: 16px;
-    background-color: #373b69;
-    color: white;
-    border-radius: 5px;
-    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.movie-container img, .person-container img {
-    max-width: 100%;
-}
-
-.movie-info, .person-info {
-    display: flex;
-    font-size: 15px;
-    padding: 20px;
-    justify-content: space-between;
-    align-items: center;
-    
-}
-
-.movie-info h4, person-info h4 {
-    margin: 0;
-}
-
-.movie-info span {
-    margin-left: 3px;
-}
+/* css 초기화 */
+@import '../reset.css';
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
 .menuBar-wrap{
-    height: 40px;
-    max-width: 1400px;
-    margin: 0 4%;
-
-    display: flex;
-    align-items: center;
+    margin: 35px 0 0 0;
 }
 
 .menuBar{
-    display: flex;
     width: 100%;
 }
 
@@ -56,19 +19,23 @@
 }
 
 .movieTab, .personTab{
-    width:80px;
     text-align: center;
-    color: white;
-    font-size: 17px;
-    font-weight: 500;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #D8E3E5;
+    font-size: 25px;
+    font-weight: bold;
     cursor: pointer;
 }
 
 .hiddenTab {
-    width:80px;
     text-align: center;
-    color: gray;
-    font-size: 17px;
-    font-weight: 500;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+    color: #8A8A8A;
+    font-size: 20px;
+    font-weight: normal;
     cursor: pointer;
 }

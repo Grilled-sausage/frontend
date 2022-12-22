@@ -1,6 +1,4 @@
 import './MovieR.css';
-// import poster from './assets/poster.jfif';
-import { useState } from 'react';
 import StarRate from './StarRate';
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
