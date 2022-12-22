@@ -1,0 +1,31 @@
+/* css 초기화 */
+@import '../reset.css';
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+
+.movieBox {
+  width : 175px;
+  text-align: center;
+  background-color: #1d1d1d;
+  margin: 50px 40px;
+}
+
+.movieBox img {
+  width : 175px;
+  height: 250px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.movieBox h3 {
+  margin: 15px 0 5px 0;
+  color: #D8E3E5;
+  font-size: 15px;
+  font-weight: 700;
+  height: 32px;
+  overflow: scroll;  /*영화제목이 세줄이상인 경우 scroll or hidden 추후 회의 후 결정*/
+  font-style: normal;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
