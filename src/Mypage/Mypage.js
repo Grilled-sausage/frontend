@@ -11,7 +11,7 @@ import Rated from "./Rated";
 function Mypage() {
   const [state, setState] = useState(0);
   return (
-    <div>
+    <div className="mypage-body">
       <div className='sidebar'>
         <div className='menu'>
           <ul>

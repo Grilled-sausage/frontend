@@ -6,6 +6,13 @@
 
 .navbar-container {
   border-bottom: #EFF4F5 solid 2px;
+  /* navbar 최상단 고정 및 z-index 최상위 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #1d1d1d;
 }
 
 .navbar {

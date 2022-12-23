@@ -8,6 +8,7 @@ import MainContainer from '../Components/MainContainer';
 function Main() {
   return (
     <>
+    <div className='main-body'>
       <MainContainer 
         genre={'전체'}
       />
@@ -23,6 +24,7 @@ function Main() {
       <MainContainer 
         // genre={}
       />
+    </div>
     </>
   );
 }
