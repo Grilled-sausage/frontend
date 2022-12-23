@@ -20,7 +20,7 @@ function App(){
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/survey" element={<><Header /> <Survey /></>}></Route>
                     <Route path="/main" element={<><MainHeader /><Main /></>}></Route>
-                    <Route paht="/main/more" element={<><MainHeader /><More /></>}></Route>
+                    <Route path="/main/more" element={<><MainHeader /><More /></>}></Route>
                     <Route path="/mypage" element={<><MainHeader /><Mypage /></>}></Route>
                 </Routes>
             </BrowserRouter>
