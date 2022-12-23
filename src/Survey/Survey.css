@@ -3,39 +3,42 @@
 /* font */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
-.menuBar-wrap{
-    margin: 35px 0 0 0;
+.menuBar-wrap {
+  display: flex;
+  margin: 0 0 0 0;
 }
 
-.menuBar{
-    width: 100%;
+.menuBar {
+  display: flex;
+  width: 100%;
 }
 
-.menuBar ul{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.menuBar ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.movieTab, .personTab{
-    text-align: center;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: 'IBM Plex Mono', monospace;
-    color: #D8E3E5;
-    font-size: 25px;
-    font-weight: bold;
-    cursor: pointer;
+.movieTab,
+.personTab {
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #D8E3E5;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .hiddenTab {
-    text-align: center;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: 'IBM Plex Mono', monospace;
-    color: #8A8A8A;
-    font-size: 20px;
-    font-weight: normal;
-    cursor: pointer;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #8A8A8A;
+  font-size: 20px;
+  font-weight: normal;
+  cursor: pointer;
 }
