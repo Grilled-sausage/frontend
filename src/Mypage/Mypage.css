@@ -1,0 +1,48 @@
+/* css 초기화 */
+@import '../reset.css';
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+
+.sidebar {
+  display: flex;
+  height: 200vh;
+  background-color: #202020;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  float: left;
+}
+
+.menu {
+  margin-left: 100px;
+  margin-top: 30px;
+  width: 200px;
+}
+
+.menu li{
+  width: 200px;
+  height: 50px;
+  font-family: 'IBM Plex Mono', monospace;
+  margin: 0 0 15px 0;
+  cursor: pointer;
+}
+
+.center {
+  padding-top: 20px;
+  height: 92vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.showPage{
+  font-size: 25px;
+  font-weight: 700;
+  color: #F0F4F5;
+}
+
+.hiddenPage{
+  font-size: 20px;
+  color: #8A8A8A;
+}
+

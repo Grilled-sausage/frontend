@@ -4,8 +4,11 @@ import Login from "./Login/Login";
 import Survey from "./Survey/Survey";
 import Header from "./Components/Header";
 import Main from "./Main/Main";
+import Mypage from "./Mypage/Mypage";
 
 import "./App.css";
+import MainHeader from "./Components/MainHeader";
+import Rated from "./Mypage/Rated";
 
 function App(){
     return (
@@ -15,7 +18,8 @@ function App(){
                     <Route path="/" element={<Intro />}></Route>
                     <Route path="/login" element={<Login />}></Route>
                     <Route path="/survey" element={<><Header /> <Survey /></>}></Route>
-                    <Route path="/main" element={<Main />}></Route>
+                    <Route path="/main" element={<><MainHeader /><Main /></>}></Route>
+                    <Route path="/mypage" element={<><MainHeader /><Mypage /></>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

@@ -29,6 +29,7 @@
   width: 33%;
   display: flex;
   justify-content: center;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
 
@@ -46,4 +47,5 @@
   font-size: 25px;
   color: #ffffff;
   text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
 }

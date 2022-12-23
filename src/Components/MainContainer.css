@@ -1,0 +1,38 @@
+/* css 초기화 */
+@import '../reset.css';
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+.main-container {
+  margin-left: 12.5%;
+  margin-right:12.5%;
+  background-color: #1d1d1d;
+  padding-top: 20px;
+}
+
+.main-container-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-container-genre {
+  display: flex;
+  width: 50%;
+  justify-content: left;
+  font-size: 30px;
+  color: #D8E3E5;
+  padding: 20px 0 0 40px;
+}
+
+.more-contents {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;  
+  padding: 35px 30px 0 0;
+  font-size: 15px;
+  color: #8a8a8a;
+}
+
+
+
