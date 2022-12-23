@@ -1,0 +1,19 @@
+/* css 초기화 */
+@import '../reset.css';
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+.more-info {
+  padding-top: 192.5px;
+  margin-left: 12%;
+  margin-right: 3%;
+  display: flex;
+  align-items: center;
+  float: left;
+}
+
+.more-genre {
+  padding-top: 180px;
+  font-size: 50px;
+  color: white;
+}
