@@ -9,12 +9,13 @@
 
 .sidebar {
   display: flex;
-  height: 200vh;
+  height: 100vh;
   background-color: #202020;
   flex-direction: column;
   align-items: center;
   width: 320px;
   float: left;
+  position: fixed;
 }
 
 .menu {
@@ -33,6 +34,7 @@
 
 .center {
   padding-top: 20px;
+  padding-left: 320px;
   height: 92vh;
   display: flex;
   flex-direction: row;
