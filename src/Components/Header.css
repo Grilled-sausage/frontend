@@ -1,66 +1,49 @@
-.header-wrap{
-    height: 62px;
-    max-width: 1400px;
-    margin: 0 4%;
+/* css 초기화 */
+@import '../reset.css';
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
-    display: flex;
-    align-items: center;
+
+.navbar {
+  margin-left: 12.5%;
+  margin-right:12.5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header-top-wrap{
-    display: flex;
-    width: 100%;
+.navbar .navbar-logo {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 33%;
+  display: flex;
+  justify-content: left;
 }
 
-.logo{
-    min-width: 261px;
+
+.navbar-title {
+  font-size: 60px;
+  color: white;
+  width: 33%;
+  display: flex;
+  justify-content: center;
 }
 
-.header-top-wrap ul{
-    display: flex;
-    align-items: center;
-    min-width:780px;
-    margin-left: 23%;
+
+.navbar-submit {
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.header-center{
-    color: white;
-    font-size: 50px;
-    font-weight: 600;
+.main-link{
+  display: flex;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  color: #ffffff;
+  text-decoration: none;
 }
-
-.header-right{
-    color: white;
-    font-size: 20px;
-    font-weight: 600;
-    margin-left: 68%;
-}
-
-/* .header-bottom-wrap{
-    height: 40px;
-    max-width: 1400px;
-    margin: 0 4%;
-
-    display: flex;
-    align-items: center;
-}
-
-.menuBar{
-    display: flex;
-    width: 100%;
-}
-
-.menuBar ul{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.movieTab, .personTab{
-    width:80px;
-    text-align: center;
-    color: white;
-    font-size: 17px;
-    font-weight: 500;
-} */

@@ -6,7 +6,7 @@ function PersonRBox() {
     <>
       <div
         style={{
-          width: "70%",
+          width: "80%",
           marginTop: "100px",
           margin: "0",
           backgroundColor: "#1d1d1d",
