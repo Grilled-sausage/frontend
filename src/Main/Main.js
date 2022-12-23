@@ -16,7 +16,7 @@ function Main() {
         genre={'액션'}
       />
       <MainContainer 
-        // genre={}
+        genre={'드라마'}
       />
       <MainContainer 
         // genre={}
