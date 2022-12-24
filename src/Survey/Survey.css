@@ -42,3 +42,7 @@
   font-weight: normal;
   cursor: pointer;
 }
+
+.hide {
+  display: none;
+}

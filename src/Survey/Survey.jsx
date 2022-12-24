@@ -17,8 +17,10 @@ export default function Survey(){
                     </ul>
                 </div>
             </div>
-            {state && <MovieRBox />}
-            {!state && <PersonRBox />}
+            <div className={state === true ? 'show' : 'hide'}><MovieRBox /></div>
+            <div className={state === false ? 'show' : 'hide'}><PersonRBox /></div>
+            {/* {state && <MovieRBox />}
+            {!state && <PersonRBox />} */}
         </div>
     );
 }
