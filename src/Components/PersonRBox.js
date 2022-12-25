@@ -1,5 +1,6 @@
 import PersonR from "./PersonR.js";
 import { personDummy } from "../personDummy";
+import React from 'react';
 
 function PersonRBox() {
   return (

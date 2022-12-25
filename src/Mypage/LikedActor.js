@@ -1,6 +1,6 @@
 import PersonR from "../Components/PersonR";
 import { personDummy } from "../personDummy";
-
+import React from 'react';
 
 function LikedActor() {
   return (

@@ -1,5 +1,6 @@
 import MovieM from "../Components/MovieM";
 import { movieDummy } from "../movieDummy";
+import React from 'react';
 
 
 function WantWatch() {

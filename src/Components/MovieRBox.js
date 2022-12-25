@@ -1,4 +1,5 @@
 import MovieR from "./MovieR";
+import React from 'react';
 import {movieDummy} from "../movieDummy";
 
 function MovieRBox() {

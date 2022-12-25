@@ -10,6 +10,7 @@ import More from "./Main/More";
 import MovieInfo from "./MovieInfo/MovieInfo";
 
 import "./App.css";
+import React from 'react';
 import MainHeader from "./Components/MainHeader";
 import Rated from "./Mypage/Rated";
 

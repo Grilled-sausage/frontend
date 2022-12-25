@@ -3,6 +3,7 @@ import { movieDummy } from "../movieDummy";
 import goMain from "../assets/goMain.svg";
 import './More.css';
 import { Link } from "react-router-dom";
+import React from 'react';
 
 const boxStyle = {
   width: "70%",
