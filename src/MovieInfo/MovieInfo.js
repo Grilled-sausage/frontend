@@ -69,6 +69,7 @@ function MovieInfo({ }) {
         <div className='info-filmmaker'>
           <h2>감독 / 출연</h2>
           <div className='info-filmmaker-contents'>
+            {/* map으로 바꿔야 함 */}
             <ul>
               <li>
                 <img src={ouya}></img>
