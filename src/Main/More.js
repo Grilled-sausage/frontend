@@ -4,6 +4,7 @@ import goMain from "../assets/goMain.svg";
 import './More.css';
 import { Link } from "react-router-dom";
 import React from 'react';
+import MainHeader from "../Components/MainHeader";
 
 const boxStyle = {
   width: "70%",
@@ -22,6 +23,7 @@ function More({ genre }) {
 
   return (
     <>
+      <MainHeader />
       <div>
         <div className="more-info">
           <Link to="/main">

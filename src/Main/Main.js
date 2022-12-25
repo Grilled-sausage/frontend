@@ -9,6 +9,7 @@ import MainContainer from '../Components/MainContainer';
 function Main() {
   return (
     <>
+    <MainHeader />
     <div className='main-body'>
       <MainContainer 
         genre={'전체'}
