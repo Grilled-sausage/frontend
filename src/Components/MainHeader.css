@@ -64,3 +64,37 @@
   width: 35px;
   height: 45px;
 }
+
+form {
+  height: 40px;
+}
+
+input:focus {
+  outline: none;
+}
+input {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+#search-bar {
+  height: 40px;
+  width: 250px;
+  margin-right: 3px;
+  padding-bottom: 0px;
+  padding-right: 10px;
+  color:#EFF4F5;
+  font-family: '';
+  background-color: #1d1d1d;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  vertical-align: text-bottom;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.search-btn {
+  background-color: #1d1d1d;
+  border: none;
+  padding: 0;
+  height: 40px
+}

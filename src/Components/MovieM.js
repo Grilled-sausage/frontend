@@ -12,7 +12,7 @@ function MovieM({ title, poster_path, vote_average }) {
   return (
     <>
       <div className='main-movie-box'>
-        <Link to='/movie-info/{movieUrl}' style={{textDecoration: "none"}}>
+        <Link to='/movie-info' style={{textDecoration: "none"}}>
           <img className='poster-main' src={IMG_BASE_URL + poster_path} alt='poster'></img>
           <h3>{title}</h3>
           <h4>{genres}</h4>

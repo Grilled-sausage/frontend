@@ -6,6 +6,7 @@ import Header from "./Components/Header";
 import Main from "./Main/Main";
 import Mypage from "./Mypage/Mypage";
 import More from "./Main/More";
+import MovieInfo from "./MovieInfo/MovieInfo";
 
 import "./App.css";
 import MainHeader from "./Components/MainHeader";
@@ -22,6 +23,7 @@ function App(){
                     <Route path="/main" element={<><MainHeader /><Main /></>}></Route>
                     <Route path="/main/more" element={<><MainHeader /><More /></>}></Route>
                     <Route path="/mypage" element={<><MainHeader /><Mypage /></>}></Route>
+                    <Route path="/movie-info" element={<><MainHeader /><MovieInfo /></>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
