@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 import mainLogo from "./logo.svg";
 import kakaoLogin from "./kakao-login.png";
 import { KAKAO_AUTH_URL } from "../Components/OAuth";
@@ -17,11 +16,9 @@ function Login(){
                 </ul>
             </div>
             <div className="body">
-                <Link className="survey-link" to="/survey">
-                    <button onClick={() => window.open(KAKAO_AUTH_URL, '_blank' ,"width=430,height=500,location=no,status=no,scrollbars=yes")}>
-                        <img className="kakao-img" src={kakaoLogin}/>
-                    </button>
-                </Link>
+                <button onClick={() => window.location.replace(KAKAO_AUTH_URL)}>
+                    <img className="kakao-img" src={kakaoLogin}/>
+                </button>
             </div>
         </div>
     );
