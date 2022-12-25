@@ -19,8 +19,6 @@ export default function Survey(){
             </div>
             <div className={state === true ? 'show' : 'hide'}><MovieRBox /></div>
             <div className={state === false ? 'show' : 'hide'}><PersonRBox /></div>
-            {/* {state && <MovieRBox />}
-            {!state && <PersonRBox />} */}
         </div>
     );
 }
