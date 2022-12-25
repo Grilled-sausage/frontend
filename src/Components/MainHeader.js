@@ -38,7 +38,7 @@ function MainHeader() {
                   alt="search" />
               </button>
             </form>
-            <li>
+            <li className='icon-list'>
               <Link to="/mypage">
                 <img id='mypage-icon' src={myPage} alt="myPage" />
               </Link>

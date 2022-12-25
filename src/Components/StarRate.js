@@ -1,17 +1,10 @@
 import React from "react";
 import { useState } from "react";
-// import { ReactComponent as Star } from "./assets/star.svg";
-// import Star from "./assets/star.svg";
 import StarRating from "react-svg-star-rating";
-
-
-// const ratingChanged = (newRating) => {
-//   console.log(newRating)
-// }
 
 function StarRate() {
   const [rating, setRating] = useState(0);
-  const handleOnClick = (rating: number) => {
+  const handleOnClick = (rating) => {
     setRating(rating);
   }
   return (
