@@ -31,12 +31,14 @@ function MainHeader() {
                 autoComplete="off"
                 required
               />
-              <button className="search-btn" type="submit">
-                <img
-                  id='search-icon'
-                  src={search}
-                  alt="search" />
-              </button>
+              <Link to="/search">
+                <button className="search-btn" type="submit">
+                  <img
+                    id='search-icon'
+                    src={search}
+                    alt="search" />
+                </button>
+              </Link>
             </form>
             <li className='icon-list'>
               <Link to="/mypage">

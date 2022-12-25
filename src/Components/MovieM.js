@@ -1,6 +1,7 @@
 import './MovieM.css';
 import starMain from '../assets/starMain.svg';
 import { Link } from 'react-router-dom';
+import React from 'react';
 
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";

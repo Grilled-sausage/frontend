@@ -3,6 +3,7 @@ import MovieR from "./MovieR";
 import { SERVER_URL } from '../Components/Server';
 import axios from 'axios';
 
+
 function MovieRBox() {
   const [movies, setMovies] = useState([]);
   useEffect(() => {

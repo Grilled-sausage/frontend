@@ -4,10 +4,111 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
 
 .info-body {
-  padding-top: 145px;
+  padding-top: 195px;
+  width: 70%; 
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.info-detail-box {
+  height: 375px;
 }
 
 .info-poster {
   width:262.5px;
   height: 375px;
+  float: left;
+  margin-right: 50px;
+}
+
+.info-center {
+  padding-top: 187px;
+}
+
+.info-rating {
+  float: left;
+  height: 40px;
+  width: 220px;
+  margin-right: 40px;
+}
+
+.info-title {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font-size: 30px;
+  font-weight: 900;
+  color: #EBF5F6;
+}
+
+.info-details {
+  font-size: 20px;
+  color: #8a8a8a;
+  font-weight: normal;
+  padding-bottom: 15px;
+}
+
+.info-molva-rating {
+  color: #EBF5F6;
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.info-naver-rating {
+  color: #EBF5F6;
+  font-size: 20px;
+}
+
+.info-summary {
+  padding-top: 50px;
+  padding-left: 312px;
+  color: #EBF5F6;
+}
+
+.info-summary h2 {
+  font-size: 25px;
+  font-weight: 900;
+  padding-bottom: 15px;
+}
+
+.info-summary p {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.info-filmmaker {
+  font-size: 25px;
+  font-weight: 900;
+  color: #EBF5F6;
+  margin-top: 100px;
+}
+
+.info-filmmaker-contents {
+  padding-top: 30px;
+}
+
+.info-filmmaker-contents img{
+  width: 140px;
+  height: 225px;
+}
+
+.info-filmmaker-contents li {
+  padding: 0 60px 0 0;
+  float: left;
+}
+
+
+.info-filmmaker-contents li:nth-child(7){
+  padding: 0;
+}
+
+.info-filmmaker-contents li h4{
+  padding-top: 5px;
+  font-size: 15px;
+  padding-bottom: 5px;
+}
+
+.info-filmmaker-contents li h5{
+  font-size: 10px;
+  color: #8a8a8a;
 }

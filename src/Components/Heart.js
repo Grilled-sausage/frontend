@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react';
 
 const defaultColor = '#8A8A8A';
 const clickedColor = '#DB6D4B';

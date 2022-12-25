@@ -1,5 +1,6 @@
 import './PersonR.css';
 import Heart from './Heart';
+import React from 'react';
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
 
