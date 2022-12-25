@@ -1,8 +1,21 @@
+import React, { useState, useEffect} from "react";
 import MovieR from "./MovieR";
-import React from 'react';
-import {movieDummy} from "../movieDummy";
+import { SERVER_URL } from '../Components/Server';
+import axios from 'axios';
+
 
 function MovieRBox() {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    axios.get(`${SERVER_URL}/api/content/survey/movie`, {
+      headers: {
+          Authorization: localStorage.getItem("Authorization")
+      }
+    }).then((res) => {
+      setMovies(res.data);
+    })
+  }, []);
+
   return (
     <>
       <div
@@ -18,11 +31,11 @@ function MovieRBox() {
           placeItems: "center",
         }}
       >
-        {movieDummy.results.map((item) => {
+        {movies.map((item) => {
           return (
             <MovieR
-              title={item.title}
-              poster_path={item.poster_path}
+              title={item.name}
+              poster_path={item.image}
             />
           );
         })}
