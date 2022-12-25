@@ -27,8 +27,8 @@ function App(){
                     <Route path="/main" element={<><Main /></>}></Route>
                     <Route path="/main/more" element={<><More /></>}></Route>
                     <Route path="/mypage" element={<><Mypage /></>}></Route>
-                    <Route path="/movie-info" element={<><MainHeader /><MovieInfo /></>}></Route>
-                    <Route path="/search" element={<><MainHeader /><Search /></>}></Route>
+                    <Route path="/movie-info" element={<><MovieInfo /></>}></Route>
+                    <Route path="/search" element={<><Search /></>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
