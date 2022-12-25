@@ -1,0 +1,1 @@
+export const SERVER_URL = 'http://ec2-3-38-49-6.ap-northeast-2.compute.amazonaws.com:8080';
