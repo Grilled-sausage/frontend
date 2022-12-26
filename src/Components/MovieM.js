@@ -7,8 +7,7 @@ import React from 'react';
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
 
 
-function MovieM({ title, poster_path, vote_average }) {
-  const genres = '액션';
+function MovieM({ title, poster_path, genres, vote_average }) {
 
   return (
     <>

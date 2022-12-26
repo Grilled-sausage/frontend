@@ -4,6 +4,8 @@ import WantWatch from "./WantWatch";
 import LikedActor from "./LikedActor";
 import LikedDirector from "./LikedDirector";
 import MainHeader from "../Components/MainHeader";
+import axios from "axios";
+import { SERVER_URL } from "../Components/Server";
 
 import './Mypage.css';
 import Rated from "./Rated";
@@ -11,6 +13,23 @@ import Rated from "./Rated";
 
 function Mypage() {
   const [state, setState] = useState(0);
+  const onUnregister = () => {
+    axios.delete(`${SERVER_URL}/api/user/info`, {
+      headers: {
+        Authorization: localStorage.getItem("Authorization")
+      }
+    }).then((res) => {
+      console.log(res.data);
+      localStorage.removeItem("Authorization");
+      window.location.replace('/');
+    })
+  }
+
+  const onLogout = () => {
+    localStorage.removeItem("Authorization");
+    window.location.replace('/');
+  }
+
   return (
     <>
       <MainHeader />
@@ -22,6 +41,8 @@ function Mypage() {
               <li className={state === 1 ? 'showPage' : 'hiddenPage'} onClick={() => setState(1)}>보고 싶어요</li>
               <li className={state === 2 ? 'showPage' : 'hiddenPage'} onClick={() => setState(2)}>좋아요한 배우</li>
               <li className={state === 3 ? 'showPage' : 'hiddenPage'} onClick={() => setState(3)}>좋아요한 감독</li>
+              <li style= {{fontSize: "20px", color: "#ffa500"}} onClick={onLogout}>로그아웃</li>
+              <li style= {{fontSize: "20px", color: "#ffa500"}} onClick={onUnregister}>회원탈퇴</li>
             </ul>
           </div>
         </div>

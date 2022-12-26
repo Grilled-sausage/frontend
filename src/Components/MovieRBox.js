@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MovieR from "./MovieR";
 import { SERVER_URL } from '../Components/Server';
 import axios from 'axios';
 
 
 function MovieRBox() {
-  let movieID;
   const [movies, setMovies] = useState([]);
   const [rating, setRating] = useState({});
   useEffect(() => {
@@ -29,13 +28,26 @@ function MovieRBox() {
   }
 
   useDidMountEffect(() => {
-    axios.post(`${SERVER_URL}/api/rating/movie`, rating, {
-      headers: {
-        Authorization: localStorage.getItem("Authorization")
-      }
-    }).then((res) => {
-      console.log(res.data);
-    })
+    if(rating.movieRating === 0){
+      axios.delete(`${SERVER_URL}/api/rating/movie`, {
+        data: rating.movieId,
+        headers: {
+          Authorization: localStorage.getItem("Authorization"),
+          "Content-Type": 'application/json'
+        }
+      }).then((res) => {
+        console.log(res.data);
+      })
+    }
+    else{
+      axios.post(`${SERVER_URL}/api/rating/movie`, rating, {
+        headers: {
+          Authorization: localStorage.getItem("Authorization")
+        }
+      }).then((res) => {
+        console.log(res.data);
+      })
+    }
   }, [rating]);
 
   return (

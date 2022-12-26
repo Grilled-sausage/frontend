@@ -6,7 +6,6 @@ function StarRate({size, func}) {
   const [rating, setRating] = useState(0);
   const handleOnClick = (rating) => {
     setRating(rating);
-    console.log(typeof rating);
     func(rating);
   }
   return (
