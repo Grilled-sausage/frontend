@@ -10,7 +10,19 @@ export default function Kakao() {
         .then((res) => {
             let jwtToken  = res.headers.get("Authorization");
             localStorage.setItem("Authorization", jwtToken);
-            window.location.replace('/survey');
+            axios.get(`${SERVER_URL}/api/rating/movie`, {
+                headers: {
+                    Authorization: localStorage.getItem("Authorization")
+                }
+            }).then((res) => {
+                if(res.data.length !== 0){
+                    //window.location.replace('/main');
+                    window.location.replace('/survey');
+                }
+                else{
+                    window.location.replace('/survey');
+                }
+            })
         })
         .catch((Error) => {console.log(Error)})
     }, []);

@@ -1,9 +1,23 @@
 import MovieM from "../Components/MovieM";
 import { movieDummy } from "../movieDummy";
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { SERVER_URL } from '../Components/Server';
+import axios from 'axios';
 
 function Rated() {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${SERVER_URL}/api/rating/movie`, {
+      headers: {
+        Authorization: localStorage.getItem("Authorization")
+      }
+    }).then((res) => {
+      setMovies(res.data);
+      console.log(res.data);
+    })
+  }, []);
+
   return (
   <div
     style={{
@@ -18,12 +32,13 @@ function Rated() {
       placeItems: "center",
     }}
   >
-    {movieDummy.results.map((item) => {
+    {movies.map((item) => {
       return (
         <MovieM
-          title={item.title}
-          poster_path={item.poster_path}
-          vote_average={item.vote_average}
+          title={item.name}
+          poster_path={item.image}
+          genres={item.genreList}
+          vote_average={item.rating}
         />
       );
     })}

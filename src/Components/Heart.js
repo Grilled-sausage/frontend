@@ -4,11 +4,12 @@ import React from 'react';
 const defaultColor = '#8A8A8A';
 const clickedColor = '#DB6D4B';
 
-function Heart ({state}) {
+function Heart ({func}) {
   
   const [active, setActive] = useState(false);
   const handleClick = () => {
-    setActive(!active);
+    setActive((current) => !current);
+    func(active);
   };
 
   return (

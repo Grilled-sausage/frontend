@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import MovieRBox from '../Components/MovieRBox';
 import PersonRBox from '../Components/PersonRBox';
 
