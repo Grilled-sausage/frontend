@@ -4,16 +4,15 @@ import React from 'react';
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
 
-function PersonR({name, profile_path}) {
-  const role = '배우';
+function PersonR({name, type, profile_path}) {
 
   return (
     <>
       <div className='personBox'>
-        <img src={IMG_BASE_URL + profile_path} alt='person'></img>
+        <img src={profile_path} alt='person'></img>
         <Heart />
         <h3>{name}</h3>
-        <h4>{role}</h4>        
+        <h4>{type}</h4>        
       </div>
     </>
   );

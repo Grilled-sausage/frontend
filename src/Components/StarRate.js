@@ -2,11 +2,12 @@ import React from "react";
 import { useState } from "react";
 import StarRating from "react-svg-star-rating";
 
-function StarRate({size}) {
+function StarRate({size, func}) {
   const [rating, setRating] = useState(0);
   const handleOnClick = (rating) => {
     setRating(rating);
-    console.log(rating);
+    console.log(typeof rating);
+    func(rating);
   }
   return (
     <>

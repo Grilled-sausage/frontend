@@ -1,8 +1,22 @@
+import React, { useState, useEffect} from "react";
 import PersonR from "./PersonR.js";
-import { personDummy } from "../personDummy";
-import React from 'react';
+import { SERVER_URL } from '../Components/Server';
+import axios from 'axios';
+
 
 function PersonRBox() {
+  const [people, setPeople] = useState([]);
+  useEffect(() => {
+    axios.get(`${SERVER_URL}/api/content/survey/filmmaker`, {
+      headers: {
+          Authorization: localStorage.getItem("Authorization")
+      }
+    }).then((res) => {
+      setPeople(res.data);
+      console.log(res.data);
+    })
+  }, []);
+
   return (
     <>
       <div
@@ -18,11 +32,12 @@ function PersonRBox() {
           placeItems: "center",
         }}
       >
-        {personDummy.results.map((item) => {
+        {people.map((item) => {
           return (
             <PersonR
               name={item.name}
-              profile_path={item.profile_path}
+              type={item.type}
+              profile_path={item.image}
             />
           );
         })}
