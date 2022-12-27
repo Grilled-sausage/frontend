@@ -1,5 +1,4 @@
 import MovieM from "../Components/MovieM";
-import { movieDummy } from "../movieDummy";
 import React, { useState, useEffect } from 'react';
 import { SERVER_URL } from '../Components/Server';
 import axios from 'axios';
@@ -39,6 +38,7 @@ function Rated() {
           poster_path={item.image}
           genres={item.genreList}
           vote_average={item.rating}
+          id={item.id}
         />
       );
     })}

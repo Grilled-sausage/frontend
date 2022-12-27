@@ -1,6 +1,8 @@
 import './MovieInfo.css';
-import { useState } from 'react';
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { SERVER_URL } from '../Components/Server';
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 import MainHeader from '../Components/MainHeader';
 import ouya from '../assets/ouya.png';
 import starMain from '../assets/starMain.svg';
@@ -11,8 +13,99 @@ import bookmarkSelected from '../assets/bookmarkSelected.svg';
 import bookmarkSelectedHover from '../assets/bookmarkSelectedHover.svg';
 
 function MovieInfo({ }) {
+  const location = useLocation();
+  const movieId = location.state.movieId;
+
+  const [movie, setMovie] = useState({});
+  const [rating, setRating] = useState({});
+  const [change, setChange] = useState(false);
   const [bookmarkState, setBookmarkState] = useState(false);
+  const [checkPost, setCheckPost] = useState();
   const [hoverState, setHoverState] = useState(false);
+
+  useEffect(() => {
+    axios.get(`${SERVER_URL}/api/content/${movieId}`, {
+      headers: {
+        Authorization: localStorage.getItem("Authorization")
+      }
+    }).then((res) => {
+      setMovie(res.data);
+      if(bookmarkState !== res.data.isReserved){
+        setCheckPost(0);
+      }
+      else{
+        setCheckPost(1);
+      }
+      setBookmarkState(res.data.isReserved);
+      console.log(res.data);
+    })
+  }, [change]);
+
+  const useDidMountEffect = (func, deps) => {
+    const didMount = useRef(false);
+
+    useEffect(() => {
+        if (didMount.current) func();
+        else didMount.current = true;
+    }, deps);
+  }
+  
+  // 별점 처리
+  useDidMountEffect(() => {
+    if(rating === 0){
+      axios.delete(`${SERVER_URL}/api/rating/movie`, {
+        data: movieId,
+        headers: {
+          Authorization: localStorage.getItem("Authorization"),
+          "Content-Type": 'application/json'
+        }
+      }).then((res) => {
+        console.log(res.data);
+        setChange((current) => !current);
+      })
+    }
+    else{
+      axios.post(`${SERVER_URL}/api/rating/movie`, {movieId: `${movieId}`, movieRating: `${rating}`}, {
+        headers: {
+          Authorization: localStorage.getItem("Authorization")
+        }
+      }).then((res) => {
+        console.log(res.data);
+        setChange((current) => !current);
+      })
+    }
+  }, [rating]);
+
+  // 보고싶어요 처리
+  useDidMountEffect(() => {
+    if(bookmarkState === false){
+      axios.delete(`${SERVER_URL}/api/reservation/movie`, {
+        data: movieId,
+        headers: {
+          Authorization: localStorage.getItem("Authorization"),
+          "Content-Type": 'application/json'
+        }
+      }).then((res) => {
+        console.log(res.data);
+      })
+    }
+    else{
+      if(checkPost === 1){
+        axios.post(`${SERVER_URL}/api/reservation/movie`, movieId , {
+          headers: {
+            Authorization: localStorage.getItem("Authorization"),
+            "Content-Type": 'application/json'
+          }
+        }).then((res) => {
+          console.log(res.data);
+        })
+      }
+      else{
+        setCheckPost(1);
+      }
+    }
+  }, [bookmarkState]);
+
 
   function handleBookmarkState() {
     if (bookmarkState === false && hoverState === false) {
@@ -33,31 +126,31 @@ function MovieInfo({ }) {
         <div className='info-detail-box'>
           {/* 포스터 */}
           <img className='info-poster'
-            src={ouya}
+            src={movie.image}
           ></img>
           <div className='info-center'>
             {/* 별점 */}
-            <div className='info-rating'><StarRate size={40} /></div>
+            <div className='info-rating'><StarRate size={40} func={setRating} myRating={movie.myRating}/></div>
 
             {/* 보고 싶어요 */}
             <img className='info-bookmark'
               src={handleBookmarkState()}
-              onClick={() => setBookmarkState(!bookmarkState)}
-              onMouseOver={() => setHoverState(!hoverState)}
-              onMouseLeave={() => setHoverState(!hoverState)}
+              onClick={() => setBookmarkState((current) => !current)}
+              onMouseOver={() => setHoverState((current) => !current)}
+              onMouseLeave={() => setHoverState((current) => !current)}
             />
 
             {/* 제목 */}
-            <h3 className='info-title'>스파이더맨: 노 웨이 홈</h3>
+            <h3 className='info-title'>{movie.name}</h3>
 
             {/* 제작년도, 장르, 국가, 상영시간 */}
-            <h4 className='info-details'>2021·액션/모험/판타지·미국·148분</h4>
+            <h4 className='info-details'>{`${movie.year}·${movie.genreList}·${movie.nation}·${movie.runTime}분`}</h4>
 
             {/* 나의 별점 */}
-            <div className='info-molva-rating'>Molva 별점  <img src={starMain} /> <span style={{ color: '#C86749' }}>5.0</span></div>
+            <div className='info-molva-rating'>Molva 별점  <img src={starMain} /> <span style={{ color: '#C86749' }}>{movie.reviewRating}</span></div>
 
             {/* 네이버 별점 */}
-            <div className='info-naver-rating'>네이버 별점  <img src={starMain} /> <span style={{ color: '#C86749' }}>4.5</span></div>
+            <div className='info-naver-rating'>네이버 별점  <img src={starMain} /> <span style={{ color: '#C86749' }}>{movie.naverRating}</span></div>
           </div>
         </div>
         {/* 줄거리 */}

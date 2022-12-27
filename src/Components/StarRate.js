@@ -2,11 +2,12 @@ import React from "react";
 import { useState } from "react";
 import StarRating from "react-svg-star-rating";
 
-function StarRate({size, func}) {
-  const [rating, setRating] = useState(0);
+function StarRate({size, func, myRating}) {
+  const [rating, setRating] = useState(myRating);
   const handleOnClick = (rating) => {
     setRating(rating);
     func(rating);
+    console.log(rating);
   }
   return (
     <>
@@ -19,6 +20,7 @@ function StarRate({size, func}) {
           size={size}
           innerRadius="20"
           handleOnClick={handleOnClick}
+          initialRating={myRating}
         />
       </section>
     </>
