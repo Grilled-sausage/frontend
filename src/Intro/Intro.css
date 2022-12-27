@@ -1,70 +1,21 @@
 .container {
-    height: 100vh;
-    overflow: hidden;
-}
-
-.header {
-    display: block;
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 62px;
-    text-align: center;
-}
-
-.header ul{
-    position: fixed;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 62px;
-    display: flex;
-    overflow: hidden;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.login-li {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    overflow: hidden;
-    position: fixed;
-    top: 0px;
-    left: 90%;
-    width: 100%;
-    height: 62px;
-    align-items: center;
-}
-
-.login-link {
-    display: inline;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
-    color: #ffffff;
-    line-height: 32px;
-    text-decoration: none;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(107.56deg, rgba(0, 0, 0, 0.2) 0%, rgba(174, 174, 174, 0.08125) 51.73%, rgba(192, 192, 192, 0) 100%), rgba(29, 29, 29, 0.94);
 }
 
 .body {
-    display: flex;
-    margin-top: 85px;
-    overflow: hidden;
-    height: 100vh;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 250px;
+  text-align: center;
 }
 
-.logo {
-    display: block;
-    /* width: 600px;
-    height: 525px; */
-    max-width: 100%;
-    width: auto !important;
-    height: auto !important;
-    overflow: hidden;
+.intro-title {
+  font-size: 30px;
+  color: white;
+  font-family: 'IBM Plex Mono', monospace;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
