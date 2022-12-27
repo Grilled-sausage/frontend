@@ -1,7 +1,8 @@
-import React from "react";
 import MainHeader from "../Components/MainHeader";
 import MovieM from "../Components/MovieM";
-import { movieDummy } from "../movieDummy";
+import React, { useState, useEffect } from 'react';
+import { SERVER_URL } from '../Components/Server';
+import axios from 'axios';
 import { useLocation } from "react-router-dom";
 
 
@@ -30,7 +31,22 @@ const resultStyle = {
 function Search() {
   const location = useLocation();
   const keyword = location.state.keyword;
-  
+
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    axios.get(`${SERVER_URL}/api/content/search?query=${keyword}`, {
+      headers: {
+        Authorization: localStorage.getItem("Authorization")
+      }
+    }).then((res) => {
+      setMovies(res.data);
+      console.log(res.data);
+    })
+  }, []);
+
+  console.log(keyword);
+
   return (
     <>
       <MainHeader />
@@ -39,12 +55,14 @@ function Search() {
       </div>
 
       <div style={boxStyle}>
-        {movieDummy.results.map((item) => {
+        {movies.map((item) => {
           return (
             <MovieM
-              title={item.title}
-              poster_path={item.poster_path}
+              title={item.name}
+              poster_path={item.image}
+              genres={item.genreList}
               vote_average={item.vote_average}
+              id={item.id}
             />
           );
         })}
