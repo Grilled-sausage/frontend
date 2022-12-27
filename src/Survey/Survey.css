@@ -25,22 +25,22 @@
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
-  font-family: 'IBM Plex Mono', monospace;
   color: #D8E3E5;
   font-size: 25px;
   font-weight: bold;
   cursor: pointer;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .hiddenTab {
   text-align: center;
   margin-left: 20px;
   margin-right: 20px;
-  font-family: 'IBM Plex Mono', monospace;
   color: #8A8A8A;
   font-size: 20px;
   font-weight: normal;
   cursor: pointer;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .hide {

@@ -26,6 +26,6 @@
   height: 32px;
   overflow: hidden;  /*영화제목이 세줄이상인 경우 scroll or hidden 추후 회의 후 결정*/
   font-style: normal;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Sans KR';
 }
 

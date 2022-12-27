@@ -8,7 +8,6 @@
   width: 70%; 
   margin-left: auto;
   margin-right: auto;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 .info-detail-box {
@@ -39,6 +38,7 @@
   font-size: 30px;
   font-weight: 900;
   color: #EBF5F6;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .info-details {
@@ -46,17 +46,20 @@
   color: #8a8a8a;
   font-weight: normal;
   padding-bottom: 15px;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .info-molva-rating {
   color: #EBF5F6;
   font-size: 20px;
   padding-bottom: 5px;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .info-naver-rating {
   color: #EBF5F6;
   font-size: 20px;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .info-summary {
@@ -69,11 +72,13 @@
   font-size: 25px;
   font-weight: 900;
   padding-bottom: 15px;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .info-summary p {
   font-size: 20px;
   font-weight: 400;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .info-filmmaker {
@@ -81,6 +86,7 @@
   font-weight: 900;
   color: #EBF5F6;
   margin-top: 100px;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .info-filmmaker-contents {
@@ -106,9 +112,11 @@
   padding-top: 5px;
   font-size: 15px;
   padding-bottom: 5px;
+  font-family: 'IBM Plex Sans KR';
 }
 
 .info-filmmaker-contents li h5{
   font-size: 10px;
   color: #8a8a8a;
+  font-family: 'IBM Plex Sans KR';
 }

@@ -23,7 +23,6 @@
   font-size: 30px;
   color: #D8E3E5;
   padding: 20px 0 0 40px;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 .more-contents {
@@ -33,6 +32,7 @@
   padding: 35px 20px 0 0;
   font-size: 15px;
   color: #8a8a8a;
+  font-family: 'IBM Plex Sans KR';
 }
 
 
