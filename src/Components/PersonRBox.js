@@ -75,6 +75,7 @@ function PersonRBox() {
               profile_path={item.image}
               id={item.id}
               func={setHeart}
+              flag={false}
             />
           );
         })}

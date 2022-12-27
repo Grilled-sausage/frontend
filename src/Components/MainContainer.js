@@ -9,6 +9,9 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from 'react-router-dom';
 
+const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
+
+
 function MainContainer({genre}) {
   return (
     <>
@@ -31,7 +34,7 @@ function MainContainer({genre}) {
               return (
                   <MovieM
                     title={item.title}
-                    poster_path={item.poster_path}
+                    poster_path={IMG_BASE_URL + item.poster_path}
                     vote_average={item.vote_average}
                   />
               );

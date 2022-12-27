@@ -4,12 +4,25 @@ import React from 'react';
 const defaultColor = '#8A8A8A';
 const clickedColor = '#DB6D4B';
 
-function Heart ({func}) {
+function Heart ({func, flag}) {
   
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(flag);
   const handleClick = () => {
-    setActive((current) => !current);
-    func(active);
+    if((active) === true){
+      if((flag) === true){
+        if(window.confirm("몰봐!! 해당 배우/감독 좋아요를 취소할래요?")){
+          func(active);
+        }
+      }
+      else{
+        setActive((current) => !current);
+        func(active);
+      }
+    }
+    else{
+      setActive((current) => !current);
+      func(active);
+    }
   };
 
   return (

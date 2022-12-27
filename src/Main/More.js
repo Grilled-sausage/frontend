@@ -7,6 +7,8 @@ import React from 'react';
 import { useLocation } from "react-router-dom";
 import MainHeader from "../Components/MainHeader";
 
+const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
+
 const boxStyle = {
   width: "70%",
   marginTop: "50px",
@@ -42,7 +44,7 @@ function More() {
           return (
             <MovieM
               title={item.title}
-              poster_path={item.poster_path}
+              poster_path={IMG_BASE_URL + item.poster_path}
               vote_average={item.vote_average}
             />
           );
