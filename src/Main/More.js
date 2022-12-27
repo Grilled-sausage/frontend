@@ -4,6 +4,7 @@ import goMain from "../assets/goMain.svg";
 import './More.css';
 import { Link } from "react-router-dom";
 import React from 'react';
+import { useLocation } from "react-router-dom";
 import MainHeader from "../Components/MainHeader";
 
 const boxStyle = {
@@ -19,7 +20,10 @@ const boxStyle = {
   paddingTop: "70px"
 };
 
-function More({ genre }) {
+function More() {
+
+  const location = useLocation();
+  const genreName = location.state.genre;
 
   return (
     <>
@@ -30,7 +34,7 @@ function More({ genre }) {
             <img src={goMain} />
           </Link>
         </div>
-        <h2 className="more-genre">전체</h2>
+        <h2 className="more-genre">{genreName}</h2>
       </div>
 
       <div style={boxStyle}>
