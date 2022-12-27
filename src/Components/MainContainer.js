@@ -16,7 +16,7 @@ function MainContainer({genre}) {
         <div className='main-container-header'>
           <div className='main-container-genre'><h2>{genre}</h2></div>
           <div className='more-contents'>
-            <Link to={"/main/more"} state={{ genre: genre}} style={{textDecoration: "none", color: "white"}}>
+            <Link to={`/main/more/${genre}`} state={{ genre: genre}} style={{textDecoration: "none", color: "white"}}>
               +더보기
             </Link>
           </div>

@@ -2,6 +2,7 @@ import React from "react";
 import MainHeader from "../Components/MainHeader";
 import MovieM from "../Components/MovieM";
 import { movieDummy } from "../movieDummy";
+import { useLocation } from "react-router-dom";
 
 
 const boxStyle = {
@@ -27,11 +28,14 @@ const resultStyle = {
 }
 
 function Search() {
+  const location = useLocation();
+  const keyword = location.state.keyword;
+  
   return (
     <>
       <MainHeader />
       <div>
-        <h2 style={resultStyle}>"스파이더맨" 의 검색결과</h2>
+        <h2 style={resultStyle}>"{keyword}" 의 검색결과</h2>
       </div>
 
       <div style={boxStyle}>

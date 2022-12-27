@@ -21,7 +21,6 @@ const boxStyle = {
 };
 
 function More() {
-
   const location = useLocation();
   const genreName = location.state.genre;
 

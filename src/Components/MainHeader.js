@@ -4,10 +4,26 @@ import search from '../assets/search.svg';
 import myPage from '../assets/myPage.svg';
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react'
+import SearchInput from './SearchInput';
 
 // 메인페이지, 더보기페이지, 작품정보페이지, 마이페이지 공통헤더
-function MainHeader() {
+class MainHeader extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      inputValue: {}
+    }
+  }
 
+  handleInput = e => {
+    const { name, value } = e.target;
+    this.setState({
+      inputValue: { ...this.state.inputValue, [name]: value },
+    });
+  };
+
+  render(){
+    const keyWord = this.state.inputValue.search;
   return (
     <>
       <div className='navbar-container'>
@@ -22,16 +38,8 @@ function MainHeader() {
           </div>
           <ul className="navbar-menu">
             <form>
-              <input
-                id='search-bar'
-                type="search"
-                name="search"
-                pattern=".*\S.*"
-                placeholder="제목, 배우, 감독을 검색하세요"
-                autoComplete="off"
-                required
-              />
-              <Link to="/search">
+              <SearchInput getInput={this.handleInput} />
+              <Link to={`/search/${keyWord}`} state={{ keyword : keyWord}}>
                 <button className="search-btn" type="submit">
                   <img
                     id='search-icon'
@@ -50,6 +58,7 @@ function MainHeader() {
       </div>
     </>
   );
+  }
 }
 
 export default MainHeader;

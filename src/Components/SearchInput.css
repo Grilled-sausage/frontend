@@ -1,0 +1,6 @@
+input:focus {
+  outline: none;
+}
+input {
+  font-family: 'IBM Plex Mono', monospace;
+}

@@ -25,10 +25,10 @@ function App(){
                     <Route path="/survey" element={<><Header /> <Survey /></>}></Route>
                     <Route path="/oauth/callback/kakao" element={<Kakao />}></Route>
                     <Route path="/main" element={<><Main /></>}></Route>
-                    <Route path="/main/more" element={<><More /></>}></Route>
+                    <Route path="/main/more/*" element={<><More /></>}></Route>
                     <Route path="/mypage" element={<><Mypage /></>}></Route>
                     <Route path="/movie-info" element={<><MovieInfo /></>}></Route>
-                    <Route path="/search" element={<><Search /></>}></Route>
+                    <Route path="/search/*" element={<><Search /></>}></Route>
                 </Routes>
             </BrowserRouter>
         </div>
