@@ -89,17 +89,13 @@
   font-family: 'IBM Plex Sans KR';
 }
 
-.info-filmmaker-contents {
-  padding-top: 30px;
-}
-
 .info-filmmaker-contents img{
-  width: 140px;
+  width: 175px;
   height: 225px;
 }
 
 .info-filmmaker-contents li {
-  padding: 0 60px 0 0;
+  padding: 0 0 0 0;
   float: left;
 }
 
@@ -109,7 +105,6 @@
 }
 
 .info-filmmaker-contents li h4{
-  padding-top: 5px;
   font-size: 15px;
   padding-bottom: 5px;
   font-family: 'IBM Plex Sans KR';
