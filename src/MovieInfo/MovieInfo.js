@@ -4,7 +4,6 @@ import { SERVER_URL } from '../Components/Server';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import MainHeader from '../Components/MainHeader';
-import ouya from '../assets/ouya.png';
 import starMain from '../assets/starMain.svg';
 import StarRate from '../Components/StarRate';
 import bookmarkDefault from '../assets/bookmarkDefault.svg';
@@ -17,6 +16,8 @@ function MovieInfo({ }) {
   const movieId = location.state.movieId;
 
   const [movie, setMovie] = useState({});
+  const [director, setDirector] = useState({});
+  const [actors, setActors] = useState([]);
   const [rating, setRating] = useState({});
   const [change, setChange] = useState(false);
   const [bookmarkState, setBookmarkState] = useState(false);
@@ -30,6 +31,9 @@ function MovieInfo({ }) {
       }
     }).then((res) => {
       setMovie(res.data);
+      setDirector(res.data.directorInfoDto);
+      setActors(res.data.actorInfoDtoList);
+
       if(bookmarkState !== res.data.isReserved){
         setCheckPost(0);
       }
@@ -37,7 +41,6 @@ function MovieInfo({ }) {
         setCheckPost(1);
       }
       setBookmarkState(res.data.isReserved);
-      console.log(res.data);
     })
   }, [change]);
 
@@ -60,7 +63,6 @@ function MovieInfo({ }) {
           "Content-Type": 'application/json'
         }
       }).then((res) => {
-        console.log(res.data);
         setChange((current) => !current);
       })
     }
@@ -70,7 +72,6 @@ function MovieInfo({ }) {
           Authorization: localStorage.getItem("Authorization")
         }
       }).then((res) => {
-        console.log(res.data);
         setChange((current) => !current);
       })
     }
@@ -85,9 +86,7 @@ function MovieInfo({ }) {
           Authorization: localStorage.getItem("Authorization"),
           "Content-Type": 'application/json'
         }
-      }).then((res) => {
-        console.log(res.data);
-      })
+      }).then((res) => {})
     }
     else{
       if(checkPost === 1){
@@ -96,9 +95,7 @@ function MovieInfo({ }) {
             Authorization: localStorage.getItem("Authorization"),
             "Content-Type": 'application/json'
           }
-        }).then((res) => {
-          console.log(res.data);
-        })
+        }).then((res) => {})
       }
       else{
         setCheckPost(1);
@@ -165,35 +162,19 @@ function MovieInfo({ }) {
             {/* map으로 바꿔야 함 */}
             <ul>
               <li>
-                <img src={ouya}></img>
-                <h4>김민근</h4>
+                <img src={director.image}></img>
+                <h4>{director.name}</h4>
                 <h5>감독</h5>
               </li>
-              <li>
-                <img src={ouya}></img>
-                <h4>김민근</h4>
-                <h5>감독</h5>
-              </li><li>
-                <img src={ouya}></img>
-                <h4>김민근</h4>
-                <h5>감독</h5>
-              </li><li>
-                <img src={ouya}></img>
-                <h4>김민근</h4>
-                <h5>감독</h5>
-              </li><li>
-                <img src={ouya}></img>
-                <h4>김민근</h4>
-                <h5>감독</h5>
-              </li><li>
-                <img src={ouya}></img>
-                <h4>김민근</h4>
-                <h5>감독</h5>
-              </li><li>
-                <img src={ouya}></img>
-                <h4>김민근</h4>
-                <h5>감독</h5>
-              </li>
+              {actors.map((item) => {
+                return (
+                  <li>
+                    <img src = {item.image}></img>
+                    <h4>{item.name}</h4>
+                    <h5>배우</h5>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
