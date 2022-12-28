@@ -41,7 +41,6 @@ function Search() {
       }
     }).then((res) => {
       setMovies(res.data);
-      console.log(res.data);
     })
   }, [keyword]);
 

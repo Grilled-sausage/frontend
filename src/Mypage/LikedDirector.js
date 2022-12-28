@@ -16,7 +16,6 @@ function LikedDirector() {
       }
     }).then((res) => {
       setDirectors(res.data);
-      console.log(res.data);
     })
   }, [change]);
 
@@ -37,7 +36,6 @@ function LikedDirector() {
         "Content-Type": 'application/json'
       }
     }).then((res) => {
-      console.log(res.data);
       setChange((current) => !current);
     })
   }, [heart]);

@@ -15,7 +15,6 @@ function LikedActor() {
       }
     }).then((res) => {
       setActors(res.data);
-      console.log(res.data);
     })
   }, [change]);
 
@@ -36,7 +35,6 @@ function LikedActor() {
         "Content-Type": 'application/json'
       }
     }).then((res) => {
-      console.log(res.data);
       setChange((current) => !current);
     })
   }, [heart]);

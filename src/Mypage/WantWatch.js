@@ -14,7 +14,6 @@ function WantWatch() {
       }
     }).then((res) => {
       setMovies(res.data);
-      console.log(res.data);
     })
   }, []);
 

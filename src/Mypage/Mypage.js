@@ -19,15 +19,16 @@ function Mypage() {
         Authorization: localStorage.getItem("Authorization")
       }
     }).then((res) => {
-      console.log(res.data);
       localStorage.removeItem("Authorization");
       window.location.replace('/');
-    })
+    }).catch((Error) => {window.alert("작품과 배우/감독에 대한 평가가 없어야 탈퇴할 수 있습니다.")})
   }
 
   const onLogout = () => {
-    localStorage.removeItem("Authorization");
-    window.location.replace('/');
+    if(window.confirm("로그아웃 하시겠습니까?")){
+      localStorage.removeItem("Authorization");
+      window.location.replace('/');
+    }
   }
 
   return (

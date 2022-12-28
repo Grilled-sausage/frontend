@@ -16,8 +16,7 @@ export default function Kakao() {
                 }
             }).then((res) => {
                 if(res.data.length !== 0){
-                    //window.location.replace('/main');
-                    window.location.replace('/survey');
+                    window.location.replace('/main');
                 }
                 else{
                     window.location.replace('/survey');
