@@ -25,7 +25,15 @@ const resultStyle = {
   fontSize: "30px",
   fontWeight: "900",
   color: "#D8E3E5",
-  fontFamily: "'IBM Plex Mono', monospace"
+  fontFamily: "'IBM Plex Sans KR', monospace"
+}
+
+const noResultStyle = {
+  fontSize: "60px",
+  color: "#D8E3E5",
+  fontFamily: "'IBM Plex Sans KR', monospace",
+  textAlign: "center",
+  paddingTop: "100px"
 }
 
 function Search() {
@@ -33,6 +41,7 @@ function Search() {
   const keyword = location.state.keyword;
 
   const [movies, setMovies] = useState([]);
+  const [length, setLength] = useState(1);
 
   useEffect(() => {
     axios.get(`${SERVER_URL}/api/content/search?keyword=${keyword}`, {
@@ -41,6 +50,7 @@ function Search() {
       }
     }).then((res) => {
       setMovies(res.data);
+      setLength(res.data.length);
     })
   }, [keyword]);
 
@@ -58,12 +68,12 @@ function Search() {
               title={item.name}
               poster_path={item.image}
               genres={item.genreList}
-              vote_average={item.vote_average}
               id={item.id}
             />
           );
         })}
       </div>
+      <div style={length === 0 ? noResultStyle : {display: "none"}}>검색된 결과가 없습니다.</div>
     </>
   );
 }
