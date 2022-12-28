@@ -21,6 +21,9 @@ function Main() {
         genre={'스릴러'}
       />
       <MainContainer 
+        genre={'공포'}
+      />
+      <MainContainer 
         genre={'판타지'}
       />
       <MainContainer 
