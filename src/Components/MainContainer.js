@@ -1,6 +1,7 @@
 import './MainContainer.css';
-import React, { Component } from 'react';
-import { movieDummy } from '../movieDummy';
+import React, { useState, useEffect } from 'react';
+import { SERVER_URL } from '../Components/Server';
+import axios from 'axios';
 import MovieM from './MovieM';
 
 import "slick-carousel/slick/slick.css";
@@ -9,10 +10,23 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { Link } from 'react-router-dom';
 
-const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
 
 
 function MainContainer({genre}) {
+  const [movies, setMovies] = useState([]);
+  let check = 0;
+
+  useEffect(() => {
+    axios.get(`${SERVER_URL}/api/content/main`, {
+      headers: {
+        Authorization: localStorage.getItem("Authorization")
+      }
+    }).then((res) => {
+      setMovies(res.data);
+    })
+  }, []);
+
+
   return (
     <>
       <div className='main-container'>
@@ -30,14 +44,20 @@ function MainContainer({genre}) {
             slidesToShow={6}
             slidesToScroll={6}
           >
-            {movieDummy.results.map((item) => {
-              return (
-                  <MovieM
-                    title={item.title}
-                    poster_path={IMG_BASE_URL + item.poster_path}
-                    vote_average={item.vote_average}
-                  />
-              );
+            {movies.map((item) => {
+              if(item.genre === genre || genre === '전체'){
+                if(check < 20){
+                  check += 1;
+                  return (
+                    <MovieM
+                      title={item.name}
+                      poster_path={item.image}
+                      genres={item.genreList}
+                      id={item.id}
+                    />
+                  );
+                }
+              }
             })}
           </Slider>
         </div>

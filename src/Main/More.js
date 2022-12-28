@@ -1,13 +1,12 @@
 import MovieM from "../Components/MovieM";
-import { movieDummy } from "../movieDummy";
 import goMain from "../assets/goMain.svg";
 import './More.css';
 import { Link } from "react-router-dom";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { SERVER_URL } from '../Components/Server';
+import axios from 'axios';
 import { useLocation } from "react-router-dom";
 import MainHeader from "../Components/MainHeader";
-
-const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
 
 const boxStyle = {
   width: "70%",
@@ -26,6 +25,19 @@ function More() {
   const location = useLocation();
   const genreName = location.state.genre;
 
+  const [movies, setMovies] = useState([]);
+  let check = 0;
+
+  useEffect(() => {
+    axios.get(`${SERVER_URL}/api/content/main`, {
+      headers: {
+        Authorization: localStorage.getItem("Authorization")
+      }
+    }).then((res) => {
+      setMovies(res.data);
+    })
+  }, []);
+
   return (
     <>
       <MainHeader />
@@ -39,14 +51,20 @@ function More() {
       </div>
 
       <div style={boxStyle}>
-        {movieDummy.results.map((item) => {
-          return (
-            <MovieM
-              title={item.title}
-              poster_path={IMG_BASE_URL + item.poster_path}
-              vote_average={item.vote_average}
-            />
-          );
+        {movies.map((item) => {
+          if(item.genre === genreName || genreName === '전체'){
+            if(check > 19 && check < 50){
+              return (
+                <MovieM
+                  title={item.name}
+                  poster_path={item.image}
+                  genres={item.genreList}
+                  id={item.id}
+                />
+              );
+            }
+            check += 1;
+          }
         })}
       </div>
     </>

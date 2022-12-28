@@ -38,7 +38,6 @@ function WantWatch() {
           title={item.name}
           poster_path={item.image}
           genres={item.genreList}
-          vote_average={item.rating}
           id={item.id}
         />
       );
