@@ -1,8 +1,5 @@
 import './Main.css';
 import React from 'react';
-import mainLogo from "../Components/logo.svg";
-import search from '../assets/search.svg';
-import myPage from '../assets/myPage.svg';
 import MainHeader from '../Components/MainHeader';
 import MainContainer from '../Components/MainContainer';
 

@@ -14,7 +14,6 @@ function PersonRBox() {
       }
     }).then((res) => {
       setPeople(res.data);
-      console.log(res.data);
     })
   }, []);
 
@@ -35,9 +34,7 @@ function PersonRBox() {
           Authorization: localStorage.getItem("Authorization"),
           "Content-Type": 'application/json'
         }
-      }).then((res) => {
-        console.log(res.data);
-      })
+      }).then((res) => {})
     }
     else{
       axios.post(`${SERVER_URL}/api/preference/filmmaker`, heart.personId, {
@@ -45,11 +42,8 @@ function PersonRBox() {
           Authorization: localStorage.getItem("Authorization"),
           "Content-Type": 'application/json'
         }
-      }).then((res) => {
-        console.log(res.data);
-      })
+      }).then((res) => {})
     }
-    console.log(heart.personId);
   }, [heart]);
 
   return (

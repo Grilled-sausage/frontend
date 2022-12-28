@@ -14,7 +14,6 @@ function MovieRBox() {
       }
     }).then((res) => {
       setMovies(res.data);
-      console.log(res.data);
     })
   }, []);
 
@@ -35,18 +34,14 @@ function MovieRBox() {
           Authorization: localStorage.getItem("Authorization"),
           "Content-Type": 'application/json'
         }
-      }).then((res) => {
-        console.log(res.data);
-      })
+      }).then((res) => {})
     }
     else{
       axios.post(`${SERVER_URL}/api/rating/movie`, rating, {
         headers: {
           Authorization: localStorage.getItem("Authorization")
         }
-      }).then((res) => {
-        console.log(res.data);
-      })
+      }).then((res) => {})
     }
   }, [rating]);
 

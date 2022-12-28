@@ -13,7 +13,6 @@ function Rated() {
       }
     }).then((res) => {
       setMovies(res.data);
-      console.log(res.data);
     })
   }, []);
 

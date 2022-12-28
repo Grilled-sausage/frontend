@@ -1,4 +1,4 @@
-  import React from "react";
+import React from "react";
 import mainLogo from "../assets/mainLogo.svg";
 import kakaoLogin from "../assets/kakaoLogin.svg";
 import appleLogin from "../assets/appleLogin.svg";

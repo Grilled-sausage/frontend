@@ -12,13 +12,14 @@ import Search from "./Search/Search";
 
 import "./App.css";
 import React from 'react';
-import MainHeader from "./Components/MainHeader";
-import Rated from "./Mypage/Rated";
+
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App(){
     return (
         <div className="App">
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Intro />}></Route>
                     <Route path="/login" element={<Login />}></Route>
