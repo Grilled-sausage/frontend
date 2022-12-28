@@ -35,7 +35,7 @@ function Search() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    axios.get(`${SERVER_URL}/api/content/search?query=${keyword}`, {
+    axios.get(`${SERVER_URL}/api/content/search?keyword=${keyword}`, {
       headers: {
         Authorization: localStorage.getItem("Authorization")
       }
@@ -43,9 +43,7 @@ function Search() {
       setMovies(res.data);
       console.log(res.data);
     })
-  }, []);
-
-  console.log(keyword);
+  }, [keyword]);
 
   return (
     <>
