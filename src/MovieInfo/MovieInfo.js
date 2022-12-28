@@ -4,6 +4,7 @@ import { SERVER_URL } from '../Components/Server';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 import MainHeader from '../Components/MainHeader';
+import PersonR from '../Components/PersonR';
 import starMain from '../assets/starMain.svg';
 import StarRate from '../Components/StarRate';
 import bookmarkDefault from '../assets/bookmarkDefault.svg';
@@ -19,6 +20,7 @@ function MovieInfo({ }) {
   const [director, setDirector] = useState({});
   const [actors, setActors] = useState([]);
   const [rating, setRating] = useState({});
+  const [heart, setHeart] = useState({});
   const [change, setChange] = useState(false);
   const [bookmarkState, setBookmarkState] = useState(false);
   const [checkPost, setCheckPost] = useState();
@@ -103,6 +105,26 @@ function MovieInfo({ }) {
     }
   }, [bookmarkState]);
 
+  // 영화인 좋아요 처리
+  useDidMountEffect(() => {
+    if(heart.heart === true){
+      axios.delete(`${SERVER_URL}/api/preference/filmmaker`, {
+        data: heart.personId,
+        headers: {
+          Authorization: localStorage.getItem("Authorization"),
+          "Content-Type": 'application/json'
+        }
+      }).then((res) => {})
+    }
+    else{
+      axios.post(`${SERVER_URL}/api/preference/filmmaker`, heart.personId, {
+        headers: {
+          Authorization: localStorage.getItem("Authorization"),
+          "Content-Type": 'application/json'
+        }
+      }).then((res) => {})
+    }
+  }, [heart]);
 
   function handleBookmarkState() {
     if (bookmarkState === false && hoverState === false) {
@@ -162,16 +184,26 @@ function MovieInfo({ }) {
             {/* map으로 바꿔야 함 */}
             <ul>
               <li>
-                <img src={director.image}></img>
-                <h4>{director.name}</h4>
-                <h5>감독</h5>
+                <PersonR
+                  name={director.name}
+                  type={director.type}
+                  profile_path={director.image}
+                  id={director.id}
+                  func={setHeart}
+                  flag={director.isPreferred}
+                />
               </li>
               {actors.map((item) => {
                 return (
                   <li>
-                    <img src = {item.image}></img>
-                    <h4>{item.name}</h4>
-                    <h5>배우</h5>
+                    <PersonR
+                      name={item.name}
+                      type={item.type}
+                      profile_path={item.image}
+                      id={item.id}
+                      func={setHeart}
+                      flag={item.isPreferred}
+                    />
                   </li>
                 );
               })}

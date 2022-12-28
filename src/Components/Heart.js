@@ -11,6 +11,7 @@ function Heart ({func, flag}) {
     if((active) === true){
       if((flag) === true){
         if(window.confirm("몰봐!! 해당 배우/감독 좋아요를 취소할래요?")){
+          setActive((current) => !current);
           func(active);
         }
       }
