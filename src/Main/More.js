@@ -54,6 +54,7 @@ function More() {
         {movies.map((item) => {
           if(item.genre === genreName || genreName === '전체'){
             if(check > 19 && check < 50){
+              check += 1;
               return (
                 <MovieM
                   title={item.name}
